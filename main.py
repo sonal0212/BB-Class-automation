@@ -39,7 +39,7 @@ try:
         curr_class = j[0]
         class_hour = j[1]
         class_min = j[2]
-        if class_hour == curr_hour and class_hour-5 < curr_min < class_hour+5:
+        if class_hour[j] == curr_hour and class_hour[j]-5 < curr_min < class_hour[i]+5:
             driver.get(curr_class)
             print("congrats you are inside the class sonal,u can relax")
         else:
