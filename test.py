@@ -14,8 +14,5 @@ now = datetime.today()
 curr_day, curr_hour, curr_min = now.strftime("%A %H %M").split()
 tt = enumerate(time_table[curr_day])
 weekly_tt = []
-for i, j in tt:
-    if class_hour == curr_hour and class_hour - 5 < curr_min < class_hour + 5:
-        print(curr_class, class_hour, class_min)
-    # curr_class, class_hour, class_min = (k-0 for i)
+    # curr_class, class_hour, class_min = (j[i] for i,j in tt)
 # curr_class, class_hour, class_min = [i[0] for i in tt]
