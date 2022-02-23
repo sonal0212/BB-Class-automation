@@ -12,10 +12,14 @@ import time
 from datetime import datetime
 
 chrome_options = Options()
-chrome_options.add_argument("--use-fake-ui-for-media-stream")
-chrome_options.add_argument("--disable-user-media-security=true")
-chrome_options.add_argument("C:/Program Files/Google/Chrome")
+chrome_options.add_argument("C:/Users/SONAL/AppData/Local/Google/Chrome/User Data")
+popups = {
+                "profile.default_content_setting_values.media_stream_mic": 1,
+                "profile.default_content_setting_values.media_stream_camera": 1
+            }
+chrome_options.add_experimental_option("prefs", popups)
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+
 driver.get("https://cuchd.blackboard.com/")
 
 now = datetime.today()

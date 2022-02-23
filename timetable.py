@@ -37,7 +37,7 @@ time_table = {
         (class_links.get("computer_networks_lab"), *Time6),
         (class_links.get("software_eng"), *Time7),
         (class_links.get("computer_networks"), *Time8),
-        ("https://cuchd.blackboard.com/ultra/courses/_54190_1/outline", 18, 16)
+        ("https://cuchd.blackboard.com/ultra/courses/_54190_1/outline", 20, 42)
     ],
     "Thursday": [
 
