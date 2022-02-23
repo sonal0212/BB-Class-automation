@@ -20,6 +20,9 @@ driver.get("https://cuchd.blackboard.com/")
 
 now = datetime.today()
 curr_day, curr_hour, curr_min = now.strftime("%A %H %M").split()  # %A:-days %H:-24 hr system %M:-60min system
+curr_hour = int(curr_hour)
+curr_min = int(curr_min)
+print(curr_hour,curr_min)
 tt = time_table[curr_day]
 
 try:
@@ -35,13 +38,11 @@ try:
     password_ele.send_keys("Naman@12")
     password_ele.send_keys(Keys.ENTER)
     weekly_time_table = []
-    for i, j in enumerate(tt):
-        curr_class = j[0]
-        class_hour = j[1]
-        class_min = j[2]
-        if class_hour[j] == curr_hour and class_hour[j]-5 < curr_min < class_hour[i]+5:
-            driver.get(curr_class)
+    for link, start_hour, start_min in tt:
+        if start_hour == curr_hour and start_min-5 < curr_min < start_min+5:
+            driver.get(link)
             print("congrats you are inside the class sonal,u can relax")
+            break
         else:
             print("Oops! class not found")
     # test = "https://cuchd.blackboard.com/ultra/courses/_54190_1/outline"

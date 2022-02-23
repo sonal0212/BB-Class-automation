@@ -13,6 +13,7 @@ from datetime import datetime
 now = datetime.today()
 curr_day, curr_hour, curr_min = now.strftime("%A %H %M").split()
 tt = enumerate(time_table[curr_day])
-weekly_tt = []
-    # curr_class, class_hour, class_min = (j[i] for i,j in tt)
-# curr_class, class_hour, class_min = [i[0] for i in tt]
+print(time_table[curr_day])
+for x,y,z in time_table[curr_day]:
+    print(x,y,z)
+
